@@ -53,6 +53,12 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue(){
         animator.SetBool("isOpen", false); //needs to be removed or edited 
         
-        Debug.Log("End of conversation.");
+        // Debug.Log("End of conversation.");
+    }
+
+    //will have to be reworked to include tracking dialogue 
+    //should rename it when the time comes
+    public void closeOptionsBox(){ 
+        animator.SetBool("isOpen", false); 
     }
 }
