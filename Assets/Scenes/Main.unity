@@ -586,7 +586,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &524466721
 GameObject:
@@ -912,7 +912,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &654966277
 GameObject:
@@ -1003,7 +1003,7 @@ GameObject:
   - component: {fileID: 808286200}
   - component: {fileID: 808286199}
   m_Layer: 5
-  m_Name: Text
+  m_Name: OptionText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1163,7 +1163,7 @@ RectTransform:
   - {fileID: 1049978906}
   - {fileID: 501739327}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1225,9 +1225,16 @@ MonoBehaviour:
   dialogue:
     name: Lady Macbeth
     sentences:
-    - to BE or not to be
-    - to be or NOT to be
-    - ' to be OR not to be'
+    - That which hath made them drunk hath made me bold;
+    - What hath quench'd them hath given me fire.
+    - Hark! Peace!
+    - It was the owl that shriek'd, the fatal bellman,
+    - 'Which gives the stern''st good-night. He is about it:'
+    - The doors are open; and the surfeited grooms
+    - 'Do mock their charge with snores: I have drugg''d '
+    - 'their possets, '
+    - That death and nature do contend about them,
+    - Whether they live or die.
 --- !u!114 &1049978908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1399,6 +1406,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1261832417}
   m_CullTransparentMesh: 0
+--- !u!1 &1304038874
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1304038876}
+  - component: {fileID: 1304038875}
+  m_Layer: 0
+  m_Name: OptionsManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1304038875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304038874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de05e8f28ba945c408b0a76165d91b24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameText: {fileID: 1584093266}
+  optionOne: {fileID: 808286199}
+  optionTwo: {fileID: 1454992097}
+  optionThree: {fileID: 1353915638}
+  animator: {fileID: 501739330}
+--- !u!4 &1304038876
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304038874}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.6311091, y: -1.962718, z: 122.554245}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1353915636
 GameObject:
   m_ObjectHideFlags: 0
@@ -1411,7 +1466,7 @@ GameObject:
   - component: {fileID: 1353915639}
   - component: {fileID: 1353915638}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Option3Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1619,7 +1674,7 @@ GameObject:
   - component: {fileID: 1454992098}
   - component: {fileID: 1454992097}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Option2Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1873,6 +1928,7 @@ MonoBehaviour:
   nameText: {fileID: 1568173690}
   dialogueText: {fileID: 1261832419}
   animator: {fileID: 501739330}
+  startButton: {fileID: 1049978905}
 --- !u!4 &1786614722
 Transform:
   m_ObjectHideFlags: 0

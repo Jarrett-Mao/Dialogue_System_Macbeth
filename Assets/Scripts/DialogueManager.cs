@@ -53,9 +53,13 @@ public class DialogueManager : MonoBehaviour
     }
 
     void EndDialogue(){
-        animator.SetBool("isOpen", false); //needs to be removed or edited 
-        
+        animator.SetBool("isOpen", true); //needs to be removed or edited 
+        // FindObjectOfType<OptionsManager>().displayOptions(dialogue);
         // Debug.Log("End of conversation.");
+
+        var options = new Option();
+        options.optionsList = new string[] {"penis", "cock", "dick"};
+        FindObjectOfType<OptionsManager>().displayOptions(options);
     }
 
     //will have to be reworked to include tracking dialogue 
