@@ -10,6 +10,7 @@ public class DialogueManager : MonoBehaviour
     public Animator animator;
     public Animator optionsAnimator;
     public GameObject startButton;
+    public OptionsManager optionManager;
 
     private Queue<string> sentences;
 
@@ -59,9 +60,13 @@ public class DialogueManager : MonoBehaviour
         
         //temp hard coded needs to be fixed
         optionsAnimator.SetBool("isOpen", true);
-        var options = new Option();
-        options.optionsList = new string[] {"penis", "cock", "dick"};
-        FindObjectOfType<OptionsManager>().displayOptions(options);
+
+
+        var tempOptions = new Option();
+    
+        tempOptions.optionsList = optionManager.turnsToOps[optionManager.turnTracker];
+
+        FindObjectOfType<OptionsManager>().displayOptions(tempOptions);
     }
 
 

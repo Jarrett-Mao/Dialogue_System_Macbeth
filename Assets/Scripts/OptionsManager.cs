@@ -13,7 +13,7 @@ public class OptionsManager : MonoBehaviour
     public GameObject buttonTwo;
     public GameObject buttonThree;
     public Animator animator;
-    private int turnTracker = 1;
+    public int turnTracker = 1;
     private int numOptions;
 
     // used to track the number of options every turn
@@ -52,22 +52,28 @@ public class OptionsManager : MonoBehaviour
         
     }
 
-    public void displayOptions(Option dialogue){
+    public void displayOptions(Option options){
 
         //number of options each turn gotten by checking the turns dictionary
         numOptions = turnsToNumOps[turnTracker];
 
-        nameText.text = dialogue.name;
-
-        if (numOptions <= 2){
+        nameText.text = options.name;
+        if (numOptions == 3){
+            optionOne.text = options.optionsList[0];
+            optionTwo.text = options.optionsList[1];
+            optionThree.text = options.optionsList[2];
+        }
+        else if (numOptions == 2){
             buttonThree.gameObject.SetActive(false);
+            optionOne.text = options.optionsList[0];
+            optionTwo.text = options.optionsList[1];
         }     
-        if (numOptions == 1){
+        else {
             buttonTwo.gameObject.SetActive(false);
+            buttonThree.gameObject.SetActive(false);
+            optionOne.text = options.optionsList[0];
         }   
-        optionOne.text = dialogue.optionsList[0];
-        optionTwo.text = dialogue.optionsList[1];
-        optionThree.text = dialogue.optionsList[2];
+        
 
         // //debug turnsToOps string array
         // string[] test = turnsToOps[5];
