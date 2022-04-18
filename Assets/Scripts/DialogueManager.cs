@@ -8,6 +8,7 @@ public class DialogueManager : MonoBehaviour
     public Text nameText;
     public Text dialogueText;
     public Animator animator;
+    public GameObject startButton;
 
     private Queue<string> sentences;
 
@@ -18,7 +19,7 @@ public class DialogueManager : MonoBehaviour
 
     public void startDialogue (Dialogue dialogue){ 
 
-        animator.SetBool("isOpen", true); //needs to be removed or edited
+        // animator.SetBool("isOpen", true); //needs to be removed or editedw
 
         nameText.text = dialogue.name;
 
@@ -29,6 +30,7 @@ public class DialogueManager : MonoBehaviour
 
         DisplayNextSentence();
 
+        startButton.gameObject.SetActive(false);
     }
 
     public void DisplayNextSentence(){
