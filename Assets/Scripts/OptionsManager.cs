@@ -28,4 +28,10 @@ public class OptionsManager : MonoBehaviour
         optionThree.text = dialogue.optionsList[2];
 
     }
+
+    //will have to be reworked to include tracking dialogue 
+    //should rename it when the time comes
+    public void closeOptionsBox(){ 
+        animator.SetBool("isOpen", false); 
+    }
 }

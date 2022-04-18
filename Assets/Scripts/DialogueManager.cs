@@ -8,6 +8,7 @@ public class DialogueManager : MonoBehaviour
     public Text nameText;
     public Text dialogueText;
     public Animator animator;
+    public Animator optionsAnimator;
     public GameObject startButton;
 
     private Queue<string> sentences;
@@ -19,7 +20,7 @@ public class DialogueManager : MonoBehaviour
 
     public void startDialogue (Dialogue dialogue){ 
 
-        // animator.SetBool("isOpen", true); //needs to be removed or editedw
+        animator.SetBool("isOpen", true); //needs to be removed or editedw
 
         nameText.text = dialogue.name;
 
@@ -53,18 +54,12 @@ public class DialogueManager : MonoBehaviour
     }
 
     void EndDialogue(){
-        animator.SetBool("isOpen", true); //needs to be removed or edited 
-        // FindObjectOfType<OptionsManager>().displayOptions(dialogue);
-        // Debug.Log("End of conversation.");
-
+        
+        optionsAnimator.SetBool("isOpen", true);
         var options = new Option();
         options.optionsList = new string[] {"penis", "cock", "dick"};
         FindObjectOfType<OptionsManager>().displayOptions(options);
     }
 
-    //will have to be reworked to include tracking dialogue 
-    //should rename it when the time comes
-    public void closeOptionsBox(){ 
-        animator.SetBool("isOpen", false); 
-    }
+
 }
