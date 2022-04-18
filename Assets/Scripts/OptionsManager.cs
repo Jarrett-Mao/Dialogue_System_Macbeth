@@ -56,6 +56,8 @@ public class OptionsManager : MonoBehaviour
 
         //number of options each turn gotten by checking the turns dictionary
         numOptions = turnsToNumOps[turnTracker];
+        buttonTwo.gameObject.SetActive(true);
+        buttonThree.gameObject.SetActive(true);
 
         nameText.text = options.name;
         if (numOptions == 3){
