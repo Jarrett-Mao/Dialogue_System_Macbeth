@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class OptionsManager : MonoBehaviour
 {
@@ -9,12 +10,16 @@ public class OptionsManager : MonoBehaviour
     public Text optionOne;
     public Text optionTwo;
     public Text optionThree;
-    public GameObject buttonOne;
-    public GameObject buttonTwo;
-    public GameObject buttonThree;
+    public GameObject gameButtonOne;
+    public GameObject gameButtonTwo;
+    public GameObject gameButtonThree;
+    public Button buttonOne;
+    public Button buttonTwo;
+    public Button buttonThree;
     public Animator animator;
     public int turnTracker = 1;
-    private int numOptions;
+    private int numOptions; 
+    private int numClicked = 0;
 
     // used to track the number of options every turn
     public Dictionary<int, int> turnsToNumOps = new Dictionary<int, int>{
@@ -53,11 +58,13 @@ public class OptionsManager : MonoBehaviour
     }
 
     public void displayOptions(Option options){
+        //needs to be fixed when dialogue box is implemented
+        resetButtons();
 
         //number of options each turn gotten by checking the turns dictionary
         numOptions = turnsToNumOps[turnTracker];
-        buttonTwo.gameObject.SetActive(true);
-        buttonThree.gameObject.SetActive(true);
+        gameButtonTwo.gameObject.SetActive(true);
+        gameButtonThree.gameObject.SetActive(true);
 
         nameText.text = options.name;
         if (numOptions == 3){
@@ -66,13 +73,13 @@ public class OptionsManager : MonoBehaviour
             optionThree.text = options.optionsList[2];
         }
         else if (numOptions == 2){
-            buttonThree.gameObject.SetActive(false);
+            gameButtonThree.gameObject.SetActive(false);
             optionOne.text = options.optionsList[0];
             optionTwo.text = options.optionsList[1];
         }     
         else {
-            buttonTwo.gameObject.SetActive(false);
-            buttonThree.gameObject.SetActive(false);
+            gameButtonTwo.gameObject.SetActive(false);
+            gameButtonThree.gameObject.SetActive(false);
             optionOne.text = options.optionsList[0];
         }   
         
@@ -84,10 +91,33 @@ public class OptionsManager : MonoBehaviour
         // }
     }
 
+    public void buttonClicked(Button button){
+        
+        numClicked += 1;
+        
+        //needs to be fixed later when dialogue box is 
+        // implemented needs to account for options closing
+
+        if (numClicked == numOptions){
+            closeOptionsBox();
+        }
+        // Debug.Log(EventSystem.current.currentSelectedGameObject.name);
+        button.interactable = false;
+    }
+
     //will have to be reworked to include tracking dialogue 
     //should rename it when the time comes
     public void closeOptionsBox(){ 
         animator.SetBool("isOpen", false);
         turnTracker += 1; 
+        numClicked = 0;
+
+    }
+
+    private void resetButtons(){
+        //reset buttons after disabling
+        buttonOne.interactable = true;
+        buttonTwo.interactable = true;
+        buttonThree.interactable = true;
     }
 }

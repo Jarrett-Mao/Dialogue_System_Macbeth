@@ -64,6 +64,7 @@ public class DialogueManager : MonoBehaviour
 
         var tempOptions = new Option();
     
+        //setting temp options variable to contain option dialogue from dictionary
         tempOptions.optionsList = optionManager.turnsToOps[optionManager.turnTracker];
 
         FindObjectOfType<OptionsManager>().displayOptions(tempOptions);

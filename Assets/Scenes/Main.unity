@@ -1537,7 +1537,14 @@ MonoBehaviour:
   optionOne: {fileID: 808286199}
   optionTwo: {fileID: 658883048}
   optionThree: {fileID: 1353915638}
+  gameButtonOne: {fileID: 1355857856}
+  gameButtonTwo: {fileID: 116048015}
+  gameButtonThree: {fileID: 19948999}
+  buttonOne: {fileID: 1355857858}
+  buttonTwo: {fileID: 116048017}
+  buttonThree: {fileID: 19949001}
   animator: {fileID: 501739330}
+  turnTracker: 1
 --- !u!4 &1304038876
 Transform:
   m_ObjectHideFlags: 0
@@ -1950,6 +1957,7 @@ MonoBehaviour:
   animator: {fileID: 654966281}
   optionsAnimator: {fileID: 501739330}
   startButton: {fileID: 1049978905}
+  optionManager: {fileID: 1304038875}
 --- !u!4 &1786614722
 Transform:
   m_ObjectHideFlags: 0
