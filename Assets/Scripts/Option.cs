@@ -7,4 +7,5 @@ public class Option
 {
     public string name = "Macbeth";
     public string[] optionsList;
+    // public int numOptions = 3;
 }

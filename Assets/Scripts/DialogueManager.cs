@@ -13,6 +13,8 @@ public class DialogueManager : MonoBehaviour
 
     private Queue<string> sentences;
 
+    
+
     // Start is called before the first frame update
     void Start(){
         sentences = new Queue<string>();
@@ -55,6 +57,7 @@ public class DialogueManager : MonoBehaviour
 
     void EndDialogue(){
         
+        //temp hard coded needs to be fixed
         optionsAnimator.SetBool("isOpen", true);
         var options = new Option();
         options.optionsList = new string[] {"penis", "cock", "dick"};
