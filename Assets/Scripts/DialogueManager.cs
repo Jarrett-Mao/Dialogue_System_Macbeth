@@ -16,10 +16,20 @@ public class DialogueManager : MonoBehaviour
 
     //used to store options to dialogue 
     public Dictionary<string, string[]> triggersToDialogue = new Dictionary<string, string[]>{
-        {"What was that?", new [] {"Macbeth", "[Within] Who's there? what, ho!"}},
-        {"[Within] Who's there? what, ho!", new [] {"Lady Macbeth", "Alack, I am afraid they have awaked,",
+        {"What was that?", new [] {"MACBETH", "[Within] Who's there? what, ho!"}},
+        {"[Within] Who's there? what, ho!", new [] {"LADY MACBETH", "Alack, I am afraid they have awaked,",
          "And 'tis not done. The attempt and not the deed", "Confounds us. Hark! I laid their daggers ready;",
-         "He could not miss 'em. Had he not resembled", "My father as he slept, I had done't."}},
+         "He could not miss 'em. Had he not resembled", "My father as he slept, I had done't.", "[Enter MACBETH]", "My husband!"}},
+        {"It's done.", new [] {"MACBETH", "I have done the deed. Didst thou not hear a noise?"}},
+        {"I have done the deed. Didst thou not hear a noise?", new [] {"LADY MACBETH", "I heard the owl scream and the crickets cry.", "Did not you speak?"}},
+        {"What time?", new [] {"MACBETH", "When?"}}, {"When?", new [] {"LADY MACBETH", "Now."}},
+        {"When I went down?", new [] {"MACBETH", "As I descended?"}}, {"As I descended?", new [] {"LADY MACBETH", "Ay."}},
+        {"Listen!", new [] {"MACBETH", "Hark!", "Who lies i' the second chamber?"}}, {"Who lies i' the second chamber?", new [] {"LADY MACBETH", "Donalbain."}},
+        {"What have I done?", new [] {"MACBETH", "This is a sorry sight.", "[Looking on his hands]"}},
+        {"[Looking on his hands]", new [] {"LADY MACBETH", "A foolish thought, to say a sorry sight."}},
+        {"I heard someone sleep talking!", new [] {"MACBETH", "There's one did laugh in's sleep, and one cried", "\'" + "Murder!" + "\'", 
+        "That they did wake each other: I stood and heard them:", "But they did say their prayers, and address'd them", "Again to sleep."}}, 
+        {"Again to sleep.", new [] {"LADY MACBETH","There are two lodged together."}},
     };
 
     // Start is called before the first frame update

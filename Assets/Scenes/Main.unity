@@ -157,8 +157,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.15, y: -11}
-  m_SizeDelta: {x: 892.4325, y: 313.50107}
+  m_AnchoredPosition: {x: 0.000015263, y: -9.5}
+  m_SizeDelta: {x: 892.4325, y: 266.4145}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &19949001
 MonoBehaviour:
@@ -204,11 +204,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1304038875}
-        m_MethodName: closeOptionsBox
-        m_Mode: 1
+        m_MethodName: buttonClicked
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 19949001}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -287,8 +287,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -2.9820862}
-  m_SizeDelta: {x: 892.4325, y: 313.50107}
+  m_AnchoredPosition: {x: 0.000015254, y: -2}
+  m_SizeDelta: {x: 892.4325, y: 266.4145}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &116048017
 MonoBehaviour:
@@ -334,11 +334,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1304038875}
-        m_MethodName: closeOptionsBox
-        m_Mode: 1
+        m_MethodName: buttonClicked
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 116048017}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -517,7 +517,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 60
+    m_FontSize: 55
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -576,8 +576,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 420, y: -1.5503}
-  m_SizeDelta: {x: 23.378471, y: 32.952835}
+  m_AnchoredPosition: {x: 459.6, y: -0.00015106}
+  m_SizeDelta: {x: 21.278534, y: 27.724358}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &501739328
 MonoBehaviour:
@@ -754,7 +754,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 658, y: -158.00006}
+  m_AnchoredPosition: {x: 705, y: -126}
   m_SizeDelta: {x: 416.91614, y: 120.469635}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &541322700
@@ -952,8 +952,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -476.56}
-  m_SizeDelta: {x: 1920, y: 600}
+  m_AnchoredPosition: {x: 0, y: -414.3}
+  m_SizeDelta: {x: 1920, y: 475.48456}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &654966279
 MonoBehaviour:
@@ -1050,7 +1050,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 60
+    m_FontSize: 55
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -1147,7 +1147,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 60
+    m_FontSize: 55
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -1321,7 +1321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: Lady Macbeth
+    name: LADY MACBETH
     sentences:
     - That which hath made them drunk hath made me bold;
     - What hath quench'd them hath given me fire.
@@ -1458,8 +1458,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -332, y: -93}
-  m_SizeDelta: {x: 1150.0613, y: 457.836}
+  m_AnchoredPosition: {x: -326.94, y: -67.706}
+  m_SizeDelta: {x: 1150.0613, y: 340.07196}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1261832419
 MonoBehaviour:
@@ -1482,7 +1482,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 60
+    m_FontSize: 55
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -1540,10 +1540,8 @@ MonoBehaviour:
   gameButtonOne: {fileID: 1355857856}
   gameButtonTwo: {fileID: 116048015}
   gameButtonThree: {fileID: 19948999}
-  buttonOne: {fileID: 1355857858}
-  buttonTwo: {fileID: 116048017}
-  buttonThree: {fileID: 19949001}
   animator: {fileID: 501739330}
+  dialogueManager: {fileID: 1786614721}
   turnTracker: 1
 --- !u!4 &1304038876
 Transform:
@@ -1617,7 +1615,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 60
+    m_FontSize: 55
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -1673,8 +1671,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.15, y: 5}
-  m_SizeDelta: {x: 892.4325, y: 313.50107}
+  m_AnchoredPosition: {x: 0.000015274, y: 5.5}
+  m_SizeDelta: {x: 892.4325, y: 266.41446}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1355857858
 MonoBehaviour:
@@ -1720,11 +1718,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1304038875}
-        m_MethodName: closeOptionsBox
-        m_Mode: 1
+        m_MethodName: buttonClicked
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1355857858}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1801,7 +1799,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -326.92, y: 170}
+  m_AnchoredPosition: {x: -326.92, y: 117}
   m_SizeDelta: {x: 1150.1051, y: 154.49298}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1568173690
@@ -1879,7 +1877,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.8, y: 11.35}
+  m_AnchoredPosition: {x: 2.8, y: 10.6}
   m_SizeDelta: {x: 1150.1051, y: 154.49298}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1584093266

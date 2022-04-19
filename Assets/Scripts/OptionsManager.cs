@@ -40,7 +40,7 @@ public class OptionsManager : MonoBehaviour
         {2, new [] {"It's done."}},
         {3, new [] {"What time?", "When I went down?", "Listen!"}},
         {4, new [] {"What have I done?"}},
-        {5, new [] {"I heard someone talking in their sleep!", "They said a prayer to ward off evil..."}},
+        {5, new [] {"I heard someone sleep talking!", "They said a prayer to ward off evil..."}},
         {6, new [] {"Why couldn't I say a blessing?"}},
         {7, new [] {"I will never sleep again!", "The ghosts will not let me rest!"}},
         {8, new [] {"I can't do this anymore!"}},
