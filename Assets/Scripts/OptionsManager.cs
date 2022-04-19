@@ -105,25 +105,8 @@ public class OptionsManager : MonoBehaviour
             closeOptionsBox();
         }
 
-        //
-        Dialogue dialogue = new Dialogue();
+        Dialogue dialogue = loadSentences(currButtonText);
 
-        //temp holds the name of the speaker and their dialogue
-        string[] nameSentence = dialogueManager.opsToDialogue[currButtonText]; 
-        // nameSentence = dialogueManager.opsToDialogue[currButtonText]
-        dialogue.name = nameSentence[0];
-        dialogue.sentences = new string[nameSentence.Length-1]; 
-        for (int i = 1; i < nameSentence.Length; i++){
-            dialogue.sentences[i-1] = nameSentence[i]; 
-        }
-
-
-
-        foreach (string sentence in nameSentence){
-            Debug.Log(sentence);
-        }
-
-        //run start dialogue 
         FindObjectOfType<DialogueManager>().startDialogue(dialogue);
     }
 
@@ -147,5 +130,26 @@ public class OptionsManager : MonoBehaviour
         buttonOne.interactable = true;
         buttonTwo.interactable = true;
         buttonThree.interactable = true;
+    }
+
+    //loads the next sentences will be used to either load the last dialogue text
+    //or the options text
+    public Dialogue loadSentences(string prevText){
+        Dialogue dialogue = new Dialogue();
+
+        //temp holds the name of the speaker and their dialogue using the current
+        //button's text
+        string[] nameSentence = dialogueManager.triggersToDialogue[prevText]; 
+        dialogue.name = nameSentence[0];
+        
+        // initializes the string array in dialogue to correct size
+        dialogue.sentences = new string[nameSentence.Length-1]; 
+        
+        //enqueues all of the dialogue in the triggersToDialogue dictionary 
+        for (int i = 1; i < nameSentence.Length; i++){
+            dialogue.sentences[i-1] = nameSentence[i]; 
+        }
+
+        return dialogue;
     }
 }
