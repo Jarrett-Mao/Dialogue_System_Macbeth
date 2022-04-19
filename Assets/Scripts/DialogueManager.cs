@@ -14,7 +14,10 @@ public class DialogueManager : MonoBehaviour
 
     private Queue<string> sentences;
 
-    
+    //used to store options to dialogue 
+    public Dictionary<string, string[]> opsToDialogue = new Dictionary<string, string[]>{
+        {"What was that?", new [] {"Macbeth", "[Within] Who's there? what, ho!"}},
+    };
 
     // Start is called before the first frame update
     void Start(){
@@ -31,6 +34,9 @@ public class DialogueManager : MonoBehaviour
         foreach (string sentence in dialogue.sentences){
             sentences.Enqueue(sentence);
         }
+
+        //enqueue the next sentence by using a key to the opsToDialogue dictionary
+        //
 
         DisplayNextSentence();
 
@@ -57,16 +63,19 @@ public class DialogueManager : MonoBehaviour
     }
 
     void EndDialogue(){
-        
-        //temp hard coded needs to be fixed
-        optionsAnimator.SetBool("isOpen", true);
 
+        //if last sentence of dialogue is a key run displaySentence again
+        //else open the options menu
+        
+        //opens the options box
+        optionsAnimator.SetBool("isOpen", true);
 
         var tempOptions = new Option();
     
         //setting temp options variable to contain option dialogue from dictionary
         tempOptions.optionsList = optionManager.turnsToOps[optionManager.turnTracker];
 
+        //use function to display all options from OptionsManager
         FindObjectOfType<OptionsManager>().displayOptions(tempOptions);
     }
 

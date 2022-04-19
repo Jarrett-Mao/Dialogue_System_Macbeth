@@ -13,10 +13,8 @@ public class OptionsManager : MonoBehaviour
     public GameObject gameButtonOne;
     public GameObject gameButtonTwo;
     public GameObject gameButtonThree;
-    public Button buttonOne;
-    public Button buttonTwo;
-    public Button buttonThree;
     public Animator animator;
+    public DialogueManager dialogueManager;
     public int turnTracker = 1;
     private int numOptions; 
     private int numClicked = 0;
@@ -36,7 +34,7 @@ public class OptionsManager : MonoBehaviour
         {11, 1}
     };
 
-    //used to store what is said in the turns
+    //used to store what options is said in the turns
     public Dictionary<int, string[]> turnsToOps = new Dictionary<int, string[]>{
         {1, new [] {"What was that?"}},
         {2, new [] {"It's done."}},
@@ -50,7 +48,7 @@ public class OptionsManager : MonoBehaviour
         {10, new [] {"...", "..."}},
         {11, new [] {"I don't want to see who I've become..."}},
     }; 
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -63,6 +61,8 @@ public class OptionsManager : MonoBehaviour
 
         //number of options each turn gotten by checking the turns dictionary
         numOptions = turnsToNumOps[turnTracker];
+
+        //resets buttons after they are turned invisible
         gameButtonTwo.gameObject.SetActive(true);
         gameButtonThree.gameObject.SetActive(true);
 
@@ -94,15 +94,37 @@ public class OptionsManager : MonoBehaviour
     public void buttonClicked(Button button){
         
         numClicked += 1;
-        
+        button.interactable = false;
+
+        // Debug.Log(button.GetComponentInChildren<Text>().text);
+        string currButtonText = button.GetComponentInChildren<Text>().text;
+
         //needs to be fixed later when dialogue box is 
         // implemented needs to account for options closing
-
         if (numClicked == numOptions){
             closeOptionsBox();
         }
-        // Debug.Log(EventSystem.current.currentSelectedGameObject.name);
-        button.interactable = false;
+
+        //
+        Dialogue dialogue = new Dialogue();
+
+        //temp holds the name of the speaker and their dialogue
+        string[] nameSentence = dialogueManager.opsToDialogue[currButtonText]; 
+        // nameSentence = dialogueManager.opsToDialogue[currButtonText]
+        dialogue.name = nameSentence[0];
+        dialogue.sentences = new string[nameSentence.Length-1]; 
+        for (int i = 1; i < nameSentence.Length; i++){
+            dialogue.sentences[i-1] = nameSentence[i]; 
+        }
+
+
+
+        foreach (string sentence in nameSentence){
+            Debug.Log(sentence);
+        }
+
+        //run start dialogue 
+        FindObjectOfType<DialogueManager>().startDialogue(dialogue);
     }
 
     //will have to be reworked to include tracking dialogue 
@@ -110,12 +132,18 @@ public class OptionsManager : MonoBehaviour
     public void closeOptionsBox(){ 
         animator.SetBool("isOpen", false);
         turnTracker += 1; 
+
+        //this will need to be changed to account for dialogue box
         numClicked = 0;
 
     }
 
     private void resetButtons(){
         //reset buttons after disabling
+        Button buttonOne = gameButtonOne.GetComponent<Button>();
+        Button buttonTwo = gameButtonTwo.GetComponent<Button>();
+        Button buttonThree = gameButtonThree.GetComponent<Button>();
+
         buttonOne.interactable = true;
         buttonTwo.interactable = true;
         buttonThree.interactable = true;
