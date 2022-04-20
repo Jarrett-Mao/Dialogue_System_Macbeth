@@ -45,7 +45,7 @@ public class OptionsManager : MonoBehaviour
         {7, new [] {"I will never sleep again!", "The ghosts will not let me rest!"}},
         {8, new [] {"I can't do this anymore!"}},
         {9, new [] {"Every noise sets me off... I don't even recognize myself anymore!"}},
-        {10, new [] {"...", "..."}},
+        {10, new [] {"...", "... I..."}},
         {11, new [] {"I don't want to see who I've become..."}},
     }; 
 
