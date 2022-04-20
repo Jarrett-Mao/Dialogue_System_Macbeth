@@ -18,6 +18,9 @@ public class DialogueManager : MonoBehaviour
 
     //used to store options to dialogue 
     public Dictionary<string, string[]> triggersToDialogue = new Dictionary<string, string[]>{
+        //testing end
+        // {"[Enter LADY MACBETH]", new [] {"MACBETH", "I don't want to see who I've become..."}},
+
         {"[Enter LADY MACBETH]", new [] {"LADY MACBETH", "That which hath made them drunk hath made me bold;", "What hath quench'd them hath given me fire.",
         "Hark! Peace!", "It was the owl that shriek'd, the fatal bellman,", "Which gives the stern'st good-night. He is about it:",
         "The doors are open; and the surfeited grooms", "Do mock their charge with snores: I have drugg'd", "their possets,", "That death and nature do contend about them,", 
@@ -114,7 +117,7 @@ public class DialogueManager : MonoBehaviour
             Dialogue dialogue = optionManager.loadSentences(dialogueText.text);
             startDialogue(dialogue);
         }
-        else if (dialogueText.text == "Wake Duncan with thy knocking! I would thou couldst!"){
+        else if (dialogueText.text.Contains("Wake")){
             contButton.gameObject.SetActive(false);
             quitButton.gameObject.SetActive(true);
             return;
