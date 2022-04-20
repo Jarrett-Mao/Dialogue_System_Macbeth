@@ -57,8 +57,7 @@ public class OptionsManager : MonoBehaviour
 
     public void displayOptions(Option options){
         //needs to be fixed when dialogue box is implemented
-        resetButtons();
-
+    
         //number of options each turn gotten by checking the turns dictionary
         numOptions = turnsToNumOps[turnTracker];
 
@@ -102,8 +101,11 @@ public class OptionsManager : MonoBehaviour
         //needs to be fixed later when dialogue box is 
         // implemented needs to account for options closing
         if (numClicked == numOptions){
-            closeOptionsBox();
+            turnTracker += 1; 
+            numClicked = 0;
+            resetButtons();
         }
+        closeOptionsBox();
 
         Dialogue dialogue = loadSentences(currButtonText);
 
@@ -114,11 +116,6 @@ public class OptionsManager : MonoBehaviour
     //should rename it when the time comes
     public void closeOptionsBox(){ 
         animator.SetBool("isOpen", false);
-        turnTracker += 1; 
-
-        //this will need to be changed to account for dialogue box
-        numClicked = 0;
-
     }
 
     private void resetButtons(){

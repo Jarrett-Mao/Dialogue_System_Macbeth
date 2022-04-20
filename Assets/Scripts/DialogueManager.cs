@@ -75,7 +75,7 @@ public class DialogueManager : MonoBehaviour
 
     public void startDialogue (Dialogue dialogue){ 
 
-        animator.SetBool("isOpen", true); //needs to be removed or edited
+        animator.SetBool("isOpen", true); 
 
         nameText.text = dialogue.name;
 
