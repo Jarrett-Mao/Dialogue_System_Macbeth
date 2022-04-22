@@ -13,6 +13,7 @@ public class OptionsManager : MonoBehaviour
     public GameObject gameButtonOne;
     public GameObject gameButtonTwo;
     public GameObject gameButtonThree;
+    public Button continueButton; 
     public Animator animator;
     public DialogueManager dialogueManager;
     public int turnTracker = 1;
@@ -56,7 +57,8 @@ public class OptionsManager : MonoBehaviour
     }
 
     public void displayOptions(Option options){
-        //needs to be fixed when dialogue box is implemented
+        //disable continue button while options is displayed
+        continueButton.interactable = false;
     
         //number of options each turn gotten by checking the turns dictionary
         numOptions = turnsToNumOps[turnTracker];
@@ -98,7 +100,6 @@ public class OptionsManager : MonoBehaviour
         // Debug.Log(button.GetComponentInChildren<Text>().text);
         string currButtonText = button.GetComponentInChildren<Text>().text;
 
-        //needs to be fixed later when dialogue box is 
         // implemented needs to account for options closing
         if (numClicked == numOptions){
             turnTracker += 1; 
@@ -115,6 +116,7 @@ public class OptionsManager : MonoBehaviour
     //will have to be reworked to include tracking dialogue 
     //should rename it when the time comes
     public void closeOptionsBox(){ 
+        continueButton.interactable = true;
         animator.SetBool("isOpen", false);
     }
 

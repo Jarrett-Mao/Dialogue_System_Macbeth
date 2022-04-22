@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class Option
 {
-    public string name = "Macbeth";
+    public string name = "MACBETH";
     public string[] optionsList;
     // public int numOptions = 3;
 }
