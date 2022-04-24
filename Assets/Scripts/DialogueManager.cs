@@ -7,12 +7,15 @@ public class DialogueManager : MonoBehaviour
 {
     public Text nameText;
     public Text dialogueText;
-    public Animator animator;
+    public Animator dialogueAnimator;
+    public Animator curLeftAnimator;
+    public Animator curRightAnimator;
     public Animator optionsAnimator;
     public GameObject startButton;
     public GameObject quitButton;
     public GameObject contButton;
     public OptionsManager optionManager;
+    private bool quitButtonOn = false; 
 
     private Queue<string> sentences;
 
@@ -25,7 +28,7 @@ public class DialogueManager : MonoBehaviour
         "Hark! Peace!", "It was the owl that shriek'd, the fatal bellman,", "Which gives the stern'st good-night. He is about it:",
         "The doors are open; and the surfeited grooms", "Do mock their charge with snores: I have drugg'd", "their possets,", "That death and nature do contend about them,", 
         "Whether they live or die."}},
-        {"What was that?", new [] {"MACBETH", "<i>[Within]</i> Who's there? what, ho!"}},
+        {"What was that?", new [] {"MACBETH", "[Within] Who's there? what, ho!"}},
         {"[Within] Who's there? what, ho!", new [] {"LADY MACBETH", "Alack, I am afraid they have awaked,",
          "And 'tis not done. The attempt and not the deed", "Confounds us. Hark! I laid their daggers ready;",
          "He could not miss 'em. Had he not resembled", "My father as he slept, I had done't."}},
@@ -83,7 +86,9 @@ public class DialogueManager : MonoBehaviour
 
     public void startDialogue (Dialogue dialogue){ 
 
-        animator.SetBool("isOpen", true); 
+        dialogueAnimator.SetBool("isOpen", true);
+        curLeftAnimator.SetBool("isOpen", true);
+        curRightAnimator.SetBool("isOpen", true);
 
         nameText.text = dialogue.name;
 
@@ -126,9 +131,10 @@ public class DialogueManager : MonoBehaviour
             startDialogue(dialogue);
         }
         else if (dialogueText.text.Contains("Wake")){
+            curLeftAnimator.SetBool("isOpen", false);
+            curRightAnimator.SetBool("isOpen", false);
             contButton.gameObject.SetActive(false);
             quitButton.gameObject.SetActive(true);
-            return;
         }
         else {
             //opens the options box
@@ -142,6 +148,8 @@ public class DialogueManager : MonoBehaviour
             //use function to display all options from OptionsManager
             FindObjectOfType<OptionsManager>().displayOptions(tempOptions);
         }
+
+        
     }
 
     public void ExitGame(){
